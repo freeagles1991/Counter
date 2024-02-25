@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Значение счетчика: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiy-N0-whm">
-                                <rect key="frame" x="45.333333333333343" y="420" width="302.66666666666663" height="37"/>
+                                <rect key="frame" x="45.333333333333343" y="460" width="302.66666666666663" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="PGk-Gi-pfM"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="WZI-na-4lm"/>
@@ -26,36 +26,88 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5p-Cq-Ruu">
-                                <rect key="frame" x="30" y="733" width="333" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <action selector="ButtonAddCountTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gwY-N6-xck"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="A1n-VX-hTX">
+                                <rect key="frame" x="91.666666666666686" y="718" width="210" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Hh-Ay-4hg">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Wbu-QE-rOx"/>
+                                            <constraint firstAttribute="width" constant="50" id="wzN-eY-A1H"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="0.square" catalog="system"/>
+                                        <connections>
+                                            <action selector="ButtonResetCountTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Bo-fJ-hS5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBb-gm-svm">
+                                        <rect key="frame" x="79.999999999999986" y="0.0" width="50.000000000000014" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="G4Q-By-Rue"/>
+                                            <constraint firstAttribute="height" constant="50" id="tFc-1T-lx1"/>
+                                        </constraints>
+                                        <buttonConfiguration key="configuration" style="filled" image="minus" catalog="system"/>
+                                        <connections>
+                                            <action selector="ButtonSubstractCountTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Myn-q8-CQ4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5p-Cq-Ruu">
+                                        <rect key="frame" x="160" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Wxi-Ms-Kim"/>
+                                            <constraint firstAttribute="height" constant="50" id="hFh-0i-7fv"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.01666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system"/>
+                                        <connections>
+                                            <action selector="ButtonAddCountTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gwY-N6-xck"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAX-BQ-CyI">
+                                <rect key="frame" x="16" y="59" width="361" height="353"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wiy-N0-whm" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="D81-hr-ddU"/>
-                            <constraint firstItem="p5p-Cq-Ruu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-50" id="TPT-w7-8B1"/>
-                            <constraint firstItem="p5p-Cq-Ruu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-30" id="bPo-n7-h8F"/>
-                            <constraint firstItem="p5p-Cq-Ruu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="mw7-tO-e3M"/>
+                            <constraint firstItem="A1n-VX-hTX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9bd-Q5-bK8"/>
+                            <constraint firstItem="wiy-N0-whm" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="40" id="D81-hr-ddU"/>
+                            <constraint firstItem="A1n-VX-hTX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-50" id="oaO-i7-5l0"/>
                             <constraint firstItem="wiy-N0-whm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zt0-wR-GHH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ButtonAddCount" destination="p5p-Cq-Ruu" id="Mqu-gp-m8N"/>
+                        <outlet property="ButtonResetCount" destination="4Hh-Ay-4hg" id="fK4-de-y7o"/>
+                        <outlet property="ButtonSubstractCount" destination="wBb-gm-svm" id="J66-mn-Au7"/>
                         <outlet property="CounterLabel" destination="wiy-N0-whm" id="Orv-uZ-by4"/>
+                        <outlet property="HistoryTextView" destination="xAX-BQ-CyI" id="S3d-1b-1uB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15" y="4"/>
+            <point key="canvasLocation" x="14.503816793893129" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="0.square" catalog="system" width="128" height="114"/>
+        <image name="minus" catalog="system" width="128" height="26"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
